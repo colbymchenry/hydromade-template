@@ -1,5 +1,5 @@
 export default {
-  storeDomain: 'crownkingsco.myshopify.com',
-  storefrontToken: '6b96094a3b903774eb0c7d671dcab7ea',
+  storeDomain: 'hydrogen-preview.myshopify.com',
+  storefrontToken: '3b580e70970c4528da70c98e097c2fa0',
   storefrontApiVersion: 'unstable',
 };
