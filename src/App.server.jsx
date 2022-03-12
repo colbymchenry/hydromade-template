@@ -7,7 +7,7 @@ import LoadingFallback from './components/LoadingFallback';
 import CartProvider from './components/CartProvider.client';
 
 function App({log, pages, ...serverState}) {
-  return (
+  return ( 
     <Suspense fallback={<LoadingFallback />}>
       <ShopifyProvider shopifyConfig={{
           storeDomain: process.env.STORE_DOMAIN,
