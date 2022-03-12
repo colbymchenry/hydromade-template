@@ -7,12 +7,6 @@ import LoadingFallback from './components/LoadingFallback';
 import CartProvider from './components/CartProvider.client';
 
 function App({log, pages, ...serverState}) {
-    console.log("TOKENS")
-    console.log(import.meta.env.VITE_STORE_DOMAIN);
-    console.log(import.meta.env.VITE_VITE_STORE_DOMAIN);
-    console.log(import.meta.env.VITE_STORE_FRONT_TOKEN);
-    console.log(import.meta.env.VITE_VITE_STORE_FRONT_TOKEN);
-    console.log(import.meta.env.VITE_VERCEL_GIT_COMMIT_AUTHOR_NAME)
   return (
     <Suspense fallback={<LoadingFallback />}>
       <ShopifyProvider shopifyConfig={{
