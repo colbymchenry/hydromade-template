@@ -5,7 +5,6 @@ import DefaultSeo from './components/DefaultSeo.server';
 import NotFound from './components/NotFound.server';
 import LoadingFallback from './components/LoadingFallback';
 import CartProvider from './components/CartProvider.client';
-import 'dotenv/config'
 
 function App({log, pages, ...serverState}) {
   return (

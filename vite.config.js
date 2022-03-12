@@ -1,16 +1,19 @@
 import {defineConfig} from 'vite';
 import hydrogen from '@shopify/hydrogen/plugin';
-import 'dotenv/config'
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  optimizeDeps: {include: ['@headlessui/react']},
-  plugins: [hydrogen({
-    storeDomain: process.env.STORE_DOMAIN,
-    storefrontToken: process.env.STORE_FRONT_TOKEN,
-    storefrontApiVersion: 'unstable',
-  }), readableStreamWorkaround()],
-});
+export default ({ mode }) => {
+  require('dotenv').config({ path: `./.env` });
+  // now you can access config with process.env.{configName}
+
+  return defineConfig({
+    optimizeDeps: {include: ['@headlessui/react']},
+    plugins: [hydrogen({
+      storeDomain: process.env.STORE_DOMAIN,
+      storefrontToken: process.env.STORE_FRONT_TOKEN,
+      storefrontApiVersion: 'unstable',
+    }), readableStreamWorkaround()],
+  });
+}
 
 function readableStreamWorkaround() {
   let config;
