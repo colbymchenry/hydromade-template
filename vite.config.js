@@ -3,6 +3,7 @@ import hydrogen from '@shopify/hydrogen/plugin';
 
 export default ({ mode }) => {
   // require('dotenv').config({ path: `./.env` });
+  require('dotenv').config();
   // now you can access config with process.env.{configName}
 
   return defineConfig({
