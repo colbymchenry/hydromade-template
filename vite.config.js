@@ -12,7 +12,7 @@ export default ({ mode }) => {
       storefrontToken: process.env.VITE_STORE_FRONT_TOKEN,
       storefrontApiVersion: 'unstable',
     }), readableStreamWorkaround()],
-  });
+  }); 
 }
 
 function readableStreamWorkaround() {
