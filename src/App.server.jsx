@@ -7,10 +7,6 @@ import LoadingFallback from './components/LoadingFallback';
 import CartProvider from './components/CartProvider.client';
 
 function App({log, pages, ...serverState}) {
-
-    console.log(import.meta.env.VITE_STORE_DOMAIN)
-    console.log(import.meta.env.VITE_STORE_FRONT_TOKEN)
-
   return (
     <Suspense fallback={<LoadingFallback />}>
       <ShopifyProvider shopifyConfig={{
