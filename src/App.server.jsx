@@ -1,16 +1,20 @@
 import renderHydrogen from '@shopify/hydrogen/entry-server';
 import {DefaultRoutes, ShopifyProvider} from '@shopify/hydrogen';
 import {Suspense} from 'react';
-import shopifyConfig from '../shopify.config';
 import DefaultSeo from './components/DefaultSeo.server';
 import NotFound from './components/NotFound.server';
 import LoadingFallback from './components/LoadingFallback';
 import CartProvider from './components/CartProvider.client';
+import 'dotenv/config'
 
 function App({log, pages, ...serverState}) {
   return (
     <Suspense fallback={<LoadingFallback />}>
-      <ShopifyProvider shopifyConfig={shopifyConfig}>
+      <ShopifyProvider shopifyConfig={{
+          storeDomain: process.env.STORE_DOMAIN,
+          storefrontToken: process.env.STORE_FRONT_TOKEN,
+          storefrontApiVersion: 'unstable',
+      }}>
         <CartProvider>
           <DefaultSeo />
           <DefaultRoutes

@@ -1,12 +1,15 @@
 import {defineConfig} from 'vite';
 import hydrogen from '@shopify/hydrogen/plugin';
-
-import shopifyConfig from './shopify.config';
+import 'dotenv/config'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   optimizeDeps: {include: ['@headlessui/react']},
-  plugins: [hydrogen(shopifyConfig), readableStreamWorkaround()],
+  plugins: [hydrogen({
+    storeDomain: process.env.STORE_DOMAIN,
+    storefrontToken: process.env.STORE_FRONT_TOKEN,
+    storefrontApiVersion: 'unstable',
+  }), readableStreamWorkaround()],
 });
 
 function readableStreamWorkaround() {

@@ -33,6 +33,7 @@
   "dependencies": {
     "@headlessui/react": "^1.4.1",
     "@shopify/hydrogen": "0.11.0-experimental.2",
+    "dotenv": "^16.0.0",
     "graphql-tag": "^2.12.4",
     "path-to-regexp": "^6.2.0",
     "react": "0.0.0-experimental-529dc3ce8-20220124",
