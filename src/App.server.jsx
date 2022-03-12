@@ -8,6 +8,7 @@ import CartProvider from './components/CartProvider.client';
 
 function App({log, pages, ...serverState}) {
     console.log("TOKENS")
+    require('dotenv').config({ path: `./.env` });
     console.log(process.env.STORE_DOMAIN);
     console.log(process.env.STORE_FRONT_TOKEN);
   return (
