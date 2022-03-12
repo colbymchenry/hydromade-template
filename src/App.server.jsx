@@ -10,6 +10,7 @@ function App({log, pages, ...serverState}) {
     console.log("TOKENS")
     console.log(process.env.VITE_STORE_DOMAIN);
     console.log(process.env.VITE_STORE_FRONT_TOKEN);
+    console.log(process.env.VITE_VERCEL_GIT_COMMIT_AUTHOR_NAME)
   return (
     <Suspense fallback={<LoadingFallback />}>
       <ShopifyProvider shopifyConfig={{
